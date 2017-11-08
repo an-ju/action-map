@@ -76,19 +76,3 @@ Scenario: Creating an account with too short of a password
 Scenario: user has the option to use Google account authentication
   Given I am on the login page
   Then I should see "Sign in with Google"
-
-Scenario: User signs in with Google account while signed into Google
-  Given I am on the login page
-  And I am signed in with Google
-  And I press "Sign in with Google"
-  Then I should be on the home page
-
-Scenario: User signs in with Google account while not signed into Google
-  Given I am on the login page
-  And I am not signed in with Google
-  And I press "Sign in with Google"
-  Then I should see "Choose an account to continue"
-
-Scenario: user has the option to use Google account authentication
-  Given I am on the map page
-  Then I should see "Sign in with Google"

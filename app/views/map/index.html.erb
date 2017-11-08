@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<%= link_to "Sign in with Google", login_path %>
+<% byebug %>
+<% if user_signed_in? %>
+  <div>Welcome <%=current_user.email%>!</div>
+<% else %>
+  <%= link_to "Log in", new_user_session_path %>
+<% end %>
 
 <div id="info-box"></div>
 

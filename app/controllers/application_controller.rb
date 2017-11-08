@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   def current_user
     Marshal.load session[:user] if logged_in?
   end
-  
+
   protect_from_forgery with: :exception
 end
