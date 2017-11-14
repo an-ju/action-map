@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108070701) do
+ActiveRecord::Schema.define(version: 20171114233858) do
 
   create_table "counties", force: :cascade do |t|
     t.string   "name",                           null: false
     t.integer  "states_id"
-    t.string   "activity",   default: "neutral"		
+    t.string   "activity",   default: "neutral"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
@@ -31,12 +31,13 @@ ActiveRecord::Schema.define(version: 20171108070701) do
 
   create_table "users", force: :cascade do |t|
     t.string   "interests"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "email"
     t.string   "uid"
     t.string   "name"
     t.string   "provider"
+    t.boolean  "admin",      default: false
   end
 
 end

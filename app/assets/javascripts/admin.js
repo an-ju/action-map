@@ -8,6 +8,9 @@ $('select').on('change', function() {
     data: data,
     success: function(response) {
       console.log(response)
+    },
+    error: function(response) {
+     alert('Something went wrong. Please reload the page and try again.')
     }
   });
 });
