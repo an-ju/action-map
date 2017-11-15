@@ -15,3 +15,15 @@ Given /^I am signed in with provider "([^"]*)"$/ do |provider|
         visit login_path
     end
 end
+
+Given /^a user with email '(.*)' and (.*) privileges exists$/ do |email, privileges|
+  if privileges == 'admin'
+    User.create(:email => email, :admin => true)
+  elsif privileges == 'normal'
+    User.create(:email => email)
+  end
+end
+
+Given /^I am (signed|logged) in with email (.*)$/ do |email|
+  session[:user_id] = User.find_by_email(email).id
+end

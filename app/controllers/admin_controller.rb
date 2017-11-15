@@ -1,5 +1,9 @@
 class AdminController < ApplicationController
   def map
+    user = User.find_by_id(session[:user_id])
+    if user == nil || !user.admin
+      redirect_to '/'
+    end
     @states = State.all
     @counties = {}
     @states.each do |state|
