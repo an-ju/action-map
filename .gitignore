@@ -20,4 +20,4 @@ setup.sh
 # Ignore application configuration
 /config/application.yml
 
-/vendor
+/vendor/cache
